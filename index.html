@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mithun Gupta — DevOps Lead with experience in cloud infrastructure, Kubernetes, CI/CD, and automation.">
+  <meta name="theme-color" content="#111c2c">
+  <title>Mithun Gupta | DevOps &amp; Cloud</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17283b;
+      --muted: #627588;
+      --accent: #10aa9b;
+      --accent-dark: #087c73;
+      --line: #dce5eb;
+      --paper: #fff;
+      --canvas: #f3f6f8;
+      --night: #111c2c;
+      --night-soft: #1b2c40;
+      --mint: #b7f1e4;
+      --radius: 15px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font: 15px/1.65 "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      z-index: 5;
+      top: 0;
+      border-bottom: 1px solid rgb(255 255 255 / 9%);
+      background: rgb(17 28 44 / 96%);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      display: flex;
+      min-height: 68px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand { color: #fff; font-size: 15px; font-weight: 750; text-decoration: none; }
+    .brand span { color: var(--mint); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 9px 22px; margin: 0; padding: 0; color: #c4d0db; font-size: 13px; list-style: none; }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--mint); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 74px 0 56px;
+      background:
+        radial-gradient(ellipse at 86% 16%, rgb(16 170 155 / 22%), transparent 31%),
+        radial-gradient(ellipse at 12% 110%, rgb(40 101 142 / 24%), transparent 34%),
+        var(--night);
+      color: #fff;
+    }
+
+    .hero::after {
+      position: absolute;
+      top: -225px;
+      right: -120px;
+      width: 580px;
+      height: 580px;
+      border: 1px solid rgb(183 241 228 / 12%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px rgb(183 241 228 / 3%), 0 0 0 96px rgb(183 241 228 / 3%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; }
+    .eyebrow { margin: 0 0 16px; color: var(--mint); font-size: 12px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    .hero h1 { max-width: 760px; margin: 0; font-size: clamp(42px, 7vw, 72px); letter-spacing: -.055em; line-height: 1.05; }
+    .hero-role { margin: 15px 0 0; color: var(--mint); font-size: clamp(18px, 3vw, 24px); font-weight: 550; }
+    .hero-copy { max-width: 700px; margin: 17px 0 0; color: #c5d1dc; font-size: 17px; }
+    .contact-line { display: flex; flex-wrap: wrap; gap: 7px 22px; margin: 20px 0 0; color: #e0e8ee; font-size: 14px; }
+    .contact-line a { text-decoration-color: rgb(183 241 228 / 60%); text-underline-offset: 4px; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 26px; }
+    .button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 17px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #062b2a;
+      font-size: 14px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform .18s ease, background .18s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); background: #45d0b9; }
+    .button.secondary { border-color: rgb(255 255 255 / 26%); background: transparent; color: #fff; }
+    .button.secondary:hover { background: rgb(255 255 255 / 8%); }
+
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; margin-top: 45px; }
+    .stat { padding: 16px 18px; border: 1px solid rgb(255 255 255 / 12%); border-radius: 12px; background: rgb(255 255 255 / 5%); }
+    .stat strong { display: block; color: var(--mint); font-size: 25px; line-height: 1.25; }
+    .stat span { display: block; margin-top: 4px; color: #c1ced9; font-size: 12px; }
+
+    main { padding: 14px 0 64px; }
+    .section { padding-top: 54px; }
+    .section-heading { margin-bottom: 21px; }
+    .kicker { margin: 0 0 5px; color: var(--accent-dark); font-size: 11px; font-weight: 750; letter-spacing: .15em; text-transform: uppercase; }
+    h2 { margin: 0; font-size: clamp(25px, 3.5vw, 34px); letter-spacing: -.035em; line-height: 1.2; }
+    .section-intro { max-width: 650px; margin: 8px 0 0; color: var(--muted); }
+
+    .panel, .card, .job, .credential, .contact-card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); box-shadow: 0 6px 22px rgb(23 40 59 / 4%); }
+    .about-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(250px, .7fr); gap: 18px; }
+    .about-copy { padding: 25px 27px; color: #43596b; }
+    .about-copy p { margin: 0; }
+    .about-copy p + p { margin-top: 12px; }
+    .about-aside { padding: 23px; background: var(--night-soft); color: #fff; }
+    .about-aside h3 { margin: 0 0 12px; font-size: 16px; }
+    .fact-list { margin: 0; padding: 0; list-style: none; }
+    .fact-list li { padding: 9px 0; border-top: 1px solid rgb(255 255 255 / 12%); }
+    .fact-list strong { display: block; color: var(--mint); font-size: 13px; }
+    .fact-list span { display: block; margin-top: 2px; color: #c4d0db; font-size: 12px; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .card { padding: 21px; }
+    .card-icon { display: grid; width: 37px; height: 37px; place-items: center; border-radius: 10px; background: #e4f6f2; color: var(--accent-dark); font-size: 12px; font-weight: 800; }
+    .card h3 { margin: 13px 0 5px; font-size: 16px; }
+    .card p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .impact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .impact { padding: 20px 21px; border-left: 3px solid var(--accent); border-radius: 0 11px 11px 0; background: #fff; }
+    .impact strong { display: block; color: var(--accent-dark); font-size: 23px; line-height: 1.3; }
+    .impact span { display: block; margin-top: 5px; color: #43596b; font-size: 13px; }
+
+    .tech-panel { padding: 24px 26px; }
+    .tech-group + .tech-group { margin-top: 18px; padding-top: 17px; border-top: 1px solid var(--line); }
+    .tech-group h3 { margin: 0 0 10px; font-size: 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .tags li { padding: 6px 11px; border: 1px solid #d5e8e6; border-radius: 999px; background: #f1f9f8; color: #28645f; font-size: 12px; line-height: 1.35; }
+
+    .experience-list { display: grid; gap: 14px; }
+    .job { padding: 23px 25px; }
+    .job-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+    .job h3 { margin: 0; font-size: 17px; }
+    .company { margin: 4px 0 0; color: var(--accent-dark); font-size: 14px; font-weight: 650; }
+    .date { flex: 0 0 auto; color: var(--muted); font-size: 13px; font-weight: 650; }
+    .job ul:not(.tags) { margin: 14px 0 0; padding-left: 19px; color: #43596b; }
+    .job ul:not(.tags) li + li { margin-top: 5px; }
+    .job .tags { margin-top: 14px; }
+
+    .credential-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .credential { padding: 20px 22px; }
+    .credential-label { margin: 0 0 7px; color: var(--accent-dark); font-size: 11px; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
+    .credential h3 { margin: 0; font-size: 15px; }
+    .credential p:not(.credential-label) { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+    .award-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+    .award { padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: #43596b; font-size: 12px; }
+    .award strong { color: var(--ink); }
+
+    .contact-section { padding-top: 53px; }
+    .contact-card { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 28px; background: var(--night); color: #fff; }
+    .contact-card h2 { font-size: clamp(23px, 3vw, 30px); }
+    .contact-card p:not(.kicker) { max-width: 570px; margin: 9px 0 0; color: #c4d0db; }
+    .contact-card .button { flex: 0 0 auto; }
+    .footer { padding: 21px 0; background: #0c1725; color: #aab9c5; font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; }
+    .footer p { margin: 0; }
+    .footer a { color: #d6e5e9; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+
+    @media (max-width: 800px) {
+      .nav { align-items: flex-start; flex-direction: column; justify-content: center; gap: 7px; padding-block: 11px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .hero { padding: 48px 0 40px; }
+      .hero-copy { font-size: 15px; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 32px; }
+      .section { padding-top: 41px; }
+      .cards, .impact-grid, .credential-grid { grid-template-columns: 1fr; }
+      .about-copy, .about-aside, .tech-panel, .job, .contact-card { padding: 20px; }
+      .job-heading { flex-direction: column; gap: 4px; }
+      .date { order: -1; }
+      .contact-card { align-items: flex-start; flex-direction: column; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+
+    @media print {
+      @page { margin: 14mm; }
+      .site-header { position: static; background: var(--night); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .nav-links, .actions, .contact-section, .footer { display: none; }
+      .hero { padding: 28px 0; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .hero::after { display: none; }
+      .section { padding-top: 24px; }
+      .stats { margin-top: 20px; }
+      .job, .card, .credential, .panel { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">Mithun <span>Gupta</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#experience">Career</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-inner wrap">
+      <p class="eyebrow">DevOps · Cloud · Kubernetes</p>
+      <h1>Mithun Gupta</h1>
+      <p class="hero-role">DevOps Lead | Associate Consultant</p>
+      <p class="hero-copy">
+        DevOps professional with 11 years in IT, helping teams build, deploy, and operate
+        reliable cloud platforms and Kubernetes applications.
+      </p>
+      <p class="contact-line">
+        <a href="mailto:emkgupta2013@gmail.com">emkgupta2013@gmail.com</a>
+        <a href="tel:+918510045175">+91 85100 45175</a>
+        <span>New Delhi, India</span>
+      </p>
+      <div class="actions">
+        <a class="button" href="mailto:emkgupta2013@gmail.com">Get in touch</a>
+        <a class="button secondary" href="mithun-devopsv1.html">View resume</a>
+      </div>
+      <div class="stats" aria-label="Career highlights">
+        <div class="stat"><strong>11</strong><span>Years of IT experience</span></div>
+        <div class="stat"><strong>6</strong><span>Years in DevOps</span></div>
+        <div class="stat"><strong>25+</strong><span>Microservices migrated</span></div>
+        <div class="stat"><strong>25%</strong><span>Operational cost reduction</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section class="section" id="about">
+      <div class="section-heading">
+        <p class="kicker">About me</p>
+        <h2>Cloud platforms, automation, and reliable delivery</h2>
+      </div>
+      <div class="about-grid">
+        <div class="panel about-copy">
+          <p>
+            I have 11 years of IT experience, including 6 years of hands-on DevOps work
+            across Linux and Windows environments. My experience includes AWS, Kubernetes,
+            infrastructure as code, Docker, CI/CD, GitOps, and automation.
+          </p>
+          <p>
+            I focus on practical platform engineering: improving deployment workflows,
+            operating container platforms, troubleshooting production systems, and helping
+            teams deliver services with confidence.
+          </p>
+        </div>
+        <aside class="panel about-aside">
+          <h3>At a glance</h3>
+          <ul class="fact-list">
+            <li><strong>Cloud &amp; platforms</strong><span>AWS, EKS, MKE, Kubernetes</span></li>
+            <li><strong>Delivery &amp; automation</strong><span>CI/CD, GitOps, Ansible, scripting</span></li>
+            <li><strong>Monitoring &amp; data</strong><span>Prometheus, Grafana, ELK, Kafka</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="expertise">
+      <div class="section-heading">
+        <p class="kicker">What I do</p>
+        <h2>Technical expertise</h2>
+        <p class="section-intro">Experience across the DevOps lifecycle, from cloud foundations to application delivery and operations.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">01</span>
+          <h3>Cloud infrastructure</h3>
+          <p>AWS services, VPC networking, IAM, compute, storage, databases, and cost optimization.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">02</span>
+          <h3>Kubernetes &amp; containers</h3>
+          <p>Amazon EKS, Mirantis Kubernetes Engine, Docker, Helm, workload operations, and deployment strategies.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">03</span>
+          <h3>CI/CD &amp; GitOps</h3>
+          <p>Automated build and release workflows with Jenkins, GitLab CI, GitHub Actions, and Argo CD.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">04</span>
+          <h3>Infrastructure automation</h3>
+          <p>Infrastructure as code, Ansible configuration management, Python, and shell scripting.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">05</span>
+          <h3>Monitoring &amp; observability</h3>
+          <p>Monitoring, alerting, and log analysis with Prometheus, Grafana, ELK Stack, and CloudWatch.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">06</span>
+          <h3>Production operations</h3>
+          <p>Incident troubleshooting, Linux and Windows administration, reliability, and team collaboration.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="impact">
+      <div class="section-heading">
+        <p class="kicker">Selected outcomes</p>
+        <h2>Impact through engineering</h2>
+      </div>
+      <div class="impact-grid">
+        <div class="impact"><strong>25+ services</strong><span>Migrated microservices from Alibaba Cloud to AWS.</span></div>
+        <div class="impact"><strong>25% lower costs</strong><span>Reduced operational costs through cloud migration and optimization.</span></div>
+        <div class="impact"><strong>20% faster delivery</strong><span>Improved project completion time through cross-functional delivery leadership.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="technologies">
+      <div class="section-heading">
+        <p class="kicker">Tools &amp; platforms</p>
+        <h2>Technical stack</h2>
+      </div>
+      <div class="panel tech-panel">
+        <div class="tech-group">
+          <h3>Cloud &amp; containers</h3>
+          <ul class="tags"><li>AWS</li><li>Docker</li><li>Kubernetes</li><li>Amazon EKS</li><li>MKE</li></ul>
+        </div>
+        <div class="tech-group">
+          <h3>CI/CD &amp; GitOps</h3>
+          <ul class="tags"><li>Jenkins</li><li>GitHub Actions</li><li>GitLab CI</li><li>Argo CD</li><li>Git</li></ul>
+        </div>
+        <div class="tech-group">
+          <h3>Infrastructure &amp; automation</h3>
+          <ul class="tags"><li>Ansible</li><li>Python</li><li>Shell scripting</li><li>Operational automation</li></ul>
+        </div>
+        <div class="tech-group">
+          <h3>Monitoring, data &amp; registries</h3>
+          <ul class="tags"><li>ELK Stack</li><li>Prometheus</li><li>Grafana</li><li>Kafka</li><li>Redis</li><li>Docker Hub</li><li>Amazon ECR</li><li>Google Container Registry</li><li>Mirantis Secure Registry</li></ul>
+        </div>
+        <div class="tech-group">
+          <h3>Systems &amp; security</h3>
+          <ul class="tags"><li>Linux</li><li>Windows</li><li>Networking</li><li>Security protocols</li><li>Cloud optimization</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-heading">
+        <p class="kicker">Career journey</p>
+        <h2>Professional experience</h2>
+        <p class="section-intro">Growing from technical support and systems operations into cloud infrastructure and DevOps leadership.</p>
+      </div>
+      <div class="experience-list">
+        <article class="job">
+          <div class="job-heading">
+            <div><h3>Associate Consultant, DevOps</h3><p class="company">Tata Consultancy Services Ltd. · Gurgaon</p></div>
+            <span class="date">May 2024 – Mar 2026</span>
+          </div>
+          <ul>
+            <li>Led cross-functional projects and delivery improvements, reducing project completion time by 20%.</li>
+            <li>Orchestrated the migration of 25+ microservices from Alibaba Cloud to AWS, improving scalability and cost efficiency while reducing operational costs by 25%.</li>
+            <li>Deployed microservices on Kubernetes and improved monitoring, security, uptime, and reliability.</li>
+            <li>Built Dockerfiles and maintained CI/CD pipelines with Jenkins, GitHub Actions, and GitLab CI to streamline build, test, and deployment workflows.</li>
+            <li>Managed Mirantis Kubernetes Engine (MKE) and Amazon EKS workloads, Helm charts, manifests, secrets, and ConfigMaps; used rolling and blue-green release strategies.</li>
+            <li>Led legacy application migrations from on-premises environments to AWS using Zerto, improving disaster recovery capabilities.</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies used"><li>AWS</li><li>EKS</li><li>MKE</li><li>Kubernetes</li><li>Docker</li><li>Helm</li><li>CI/CD</li><li>Zerto</li></ul>
+        </article>
+
+        <article class="job">
+          <div class="job-heading">
+            <div><h3>DevOps Lead</h3><p class="company">Paytm · Noida, India</p></div>
+            <span class="date">Jan 2020 – May 2024</span>
+          </div>
+          <ul>
+            <li>Designed and managed AWS infrastructure, including VPCs, subnets, gateways, VPC peering, and site-to-site VPNs.</li>
+            <li>Designed and operated EKS clusters, worker nodes, and application ingress with AWS Load Balancers across development, staging, production, and disaster recovery environments.</li>
+            <li>Managed EC2, S3, RDS, ECR, CloudFront, Route 53, IAM, and Secrets Manager; configured backups and scheduled EC2 automation with Lambda.</li>
+            <li>Established monitoring and alerts for AWS services and Kubernetes workloads using CloudWatch, Container Insights, Prometheus, and Grafana.</li>
+            <li>Designed and managed Kafka and ELK Stack platforms and CI/CD pipelines; identified cloud cost-saving opportunities.</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies used"><li>AWS</li><li>EKS</li><li>Terraform</li><li>Jenkins</li><li>Kafka</li><li>ELK</li><li>Prometheus</li><li>Grafana</li></ul>
+        </article>
+
+        <article class="job">
+          <div class="job-heading">
+            <div><h3>System Engineer</h3><p class="company">Karix Mobile Pvt. Ltd. · New Delhi, India</p></div>
+            <span class="date">Jun 2016 – Jan 2020</span>
+          </div>
+          <ul>
+            <li>Supported prepaid and postpaid messaging services, investigated SMS flow issues, and resolved service incidents.</li>
+            <li>Created shell scripts, scheduled tasks with crontab, and ran SQL queries and database dumps.</li>
+            <li>Worked with Linux systems, service logs, and messaging protocols including SMPP and HTTP/HTTPS.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-heading">
+            <div><h3>VAS Engineer</h3><p class="company">Comviva Technology · Gurgaon, India</p></div>
+            <span class="date">Jun 2015 – Jun 2016</span>
+          </div>
+          <ul>
+            <li>Resolved messaging and calling issues by analyzing application logs and tracing service flows.</li>
+            <li>Supported IVR, inbound and outbound servers, and subscription services using VPN, SSH, and VNC.</li>
+            <li>Worked with Apache and Tomcat, Linux troubleshooting, database tablespaces, tcpdump, SS7 traces, SMPP, and USSD.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-heading">
+            <div><h3>Associate</h3><p class="company">One97 Communications Ltd. · Noida, India</p></div>
+            <span class="date">Feb 2014 – Jun 2015</span>
+          </div>
+          <ul>
+            <li>Provided L1 support for messaging, calling, inbound/outbound, IVR, and subscription services.</li>
+            <li>Analyzed SMS module logs and SS7 traces to investigate incidents and provide client support.</li>
+            <li>Supported Apache and Tomcat services and Linux server installation, configuration, and troubleshooting.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="credentials">
+      <div class="section-heading">
+        <p class="kicker">Learning &amp; recognition</p>
+        <h2>Credentials</h2>
+      </div>
+      <div class="credential-grid">
+        <article class="credential">
+          <p class="credential-label">Certification</p>
+          <h3>Certified Kubernetes Administrator</h3>
+          <p>Credential: LF-9gmvp60mcc</p>
+        </article>
+        <article class="credential">
+          <p class="credential-label">Certification</p>
+          <h3>Microsoft Azure Fundamentals</h3>
+          <p>Microsoft certification</p>
+        </article>
+        <article class="credential">
+          <p class="credential-label">Education · 2013</p>
+          <h3>B.Tech., Electronics &amp; Communication Engineering</h3>
+          <p>Uttar Pradesh Technical University · Lucknow</p>
+        </article>
+        <article class="credential">
+          <p class="credential-label">Recognition</p>
+          <h3>Professional awards</h3>
+          <div class="award-list">
+            <span class="award"><strong>Rising Star of the Quarter</strong> · Paytm, 2022</span>
+            <span class="award"><strong>Star of the Quarter</strong> · Paytm, 2020</span>
+            <span class="award"><strong>Rockstar of the Year</strong> · Tanla Services, 2017</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-card">
+        <div>
+          <p class="kicker">Get in touch</p>
+          <h2>Let’s talk about DevOps and cloud</h2>
+          <p>Reach out to discuss Kubernetes, AWS infrastructure, CI/CD, or platform operations.</p>
+        </div>
+        <a class="button" href="mailto:emkgupta2013@gmail.com">Email Mithun</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner wrap">
+      <p>Mithun Gupta · DevOps Lead | Associate Consultant</p>
+      <p><a href="#home">Back to top ↑</a> · <a href="mithun-devopsv1.html">Resume</a></p>
+    </div>
+  </footer>
+</body>
+</html>
