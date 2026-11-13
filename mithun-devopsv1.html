@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resume of Mithun Gupta, DevOps Lead and Associate Consultant with 11 years of IT experience.">
+  <title>Mithun Gupta | DevOps Lead</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172b3b;
+      --muted: #587080;
+      --accent: #087f8c;
+      --accent-dark: #075d68;
+      --line: #dce7eb;
+      --paper: #fff;
+      --canvas: #edf3f5;
+      --soft: #f2f8f8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font: 15px/1.6 "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    a { color: inherit; }
+
+    .resume {
+      width: min(100% - 32px, 1040px);
+      margin: 36px auto;
+      background: var(--paper);
+      box-shadow: 0 18px 55px rgb(23 43 59 / 12%);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 46px 56px 40px;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .hero::after {
+      position: absolute;
+      top: -110px;
+      right: -85px;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgb(255 255 255 / 13%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 34px rgb(255 255 255 / 4%), 0 0 0 68px rgb(255 255 255 / 3%);
+      content: "";
+    }
+
+    .eyebrow {
+      margin: 0 0 5px;
+      color: #84d9d9;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 52px);
+      letter-spacing: -.04em;
+      line-height: 1.15;
+    }
+
+    .headline {
+      margin: 9px 0 24px;
+      color: #d4e4e9;
+      font-size: 18px;
+    }
+
+    .contact {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      margin: 0;
+      padding: 0;
+      color: #e8f1f3;
+      list-style: none;
+    }
+
+    .contact a { text-decoration-color: #84d9d9; text-underline-offset: 3px; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 270px;
+      gap: 42px;
+      padding: 42px 56px 52px;
+    }
+
+    main, aside { min-width: 0; }
+
+    section + section { margin-top: 34px; }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 0 0 17px;
+      color: var(--accent-dark);
+      font-size: 13px;
+      letter-spacing: .13em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    h2::after {
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+      content: "";
+    }
+
+    .summary { margin: 0; color: #354f60; }
+
+    .job + .job {
+      margin-top: 25px;
+      padding-top: 23px;
+      border-top: 1px solid var(--line);
+    }
+
+    .job-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.4;
+    }
+
+    .date {
+      flex: 0 0 auto;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .company {
+      margin: 3px 0 9px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .job ul {
+      margin: 8px 0 0;
+      padding-left: 19px;
+      color: #354f60;
+    }
+
+    .job li + li { margin-top: 5px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tags li {
+      padding: 3px 9px;
+      border: 1px solid #d5e8e8;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent-dark);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    aside section {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdfd;
+    }
+
+    aside section + section { margin-top: 18px; }
+    aside h2 { margin-bottom: 13px; }
+    aside h2::after { display: none; }
+
+    .skill-group + .skill-group { margin-top: 14px; }
+    .skill-group h3 { font-size: 13px; }
+    .skill-group p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+
+    .side-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .side-list li + li { margin-top: 13px; }
+    .side-list strong { display: block; font-size: 14px; }
+    .side-list span { display: block; color: var(--muted); font-size: 13px; }
+    .award + .award { margin-top: 12px; }
+
+    .footer {
+      padding: 18px 56px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .resume { width: min(100% - 20px, 620px); margin: 10px auto; }
+      .hero { padding: 34px 28px 30px; }
+      .layout { grid-template-columns: 1fr; gap: 32px; padding: 32px 28px 38px; }
+      .footer { padding-inline: 28px; }
+    }
+
+    @media (max-width: 480px) {
+      .contact { display: grid; gap: 5px; }
+      .job-heading { display: block; }
+      .date { display: block; margin-top: 3px; }
+      .layout { padding-inline: 21px; }
+      .hero { padding-inline: 21px; }
+    }
+
+    @media print {
+      @page { margin: 12mm; }
+      body { background: #fff; font-size: 10pt; }
+      .resume { width: 100%; margin: 0; box-shadow: none; }
+      .hero { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .layout { grid-template-columns: minmax(0, 1fr) 230px; gap: 25px; padding: 25px 0; }
+      aside section { break-inside: avoid; }
+      .job { break-inside: avoid; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="resume">
+    <header class="hero">
+      <p class="eyebrow">DevOps · Cloud · Kubernetes</p>
+      <h1>Mithun Gupta</h1>
+      <p class="headline">DevOps Lead | Associate Consultant</p>
+      <ul class="contact">
+        <li><a href="mailto:emkgupta2013@gmail.com">emkgupta2013@gmail.com</a></li>
+        <li><a href="tel:+918510045175">+91 85100 45175</a></li>
+        <li>New Delhi, India 110036</li>
+      </ul>
+    </header>
+
+    <div class="layout">
+      <main>
+        <section aria-labelledby="profile-title">
+          <h2 id="profile-title">Profile</h2>
+          <p class="summary">
+            DevOps professional with 11 years of IT experience, including 6 years of hands-on
+            experience in DevOps across Linux and Windows environments. Experienced in AWS,
+            Kubernetes orchestration, infrastructure as code, Docker, CI/CD, GitOps, and
+            operational automation. Skilled in deploying, maintaining, and troubleshooting
+            Kubernetes clusters and configuration management, with a record of leading teams,
+            improving reliability, and optimizing cloud operations.
+          </p>
+        </section>
+
+        <section aria-labelledby="experience-title">
+          <h2 id="experience-title">Experience</h2>
+
+          <article class="job">
+            <div class="job-heading">
+              <h3>Associate Consultant, DevOps</h3>
+              <span class="date">May 2024 – Present</span>
+            </div>
+            <p class="company">Tata Consultancy Services Ltd. · Gurgaon</p>
+            <ul>
+              <li>Led cross-functional projects and delivery improvements, reducing project completion time by 20%.</li>
+              <li>Orchestrated the migration of 25+ microservices from Alibaba Cloud to AWS, improving scalability and cost efficiency while reducing operational costs by 25%.</li>
+              <li>Deployed microservices on Kubernetes and improved monitoring, security, uptime, and reliability.</li>
+              <li>Built Dockerfiles and maintained CI/CD pipelines with Jenkins, GitHub Actions, and GitLab CI to streamline build, test, and deployment workflows.</li>
+              <li>Managed Mirantis Kubernetes Engine (MKE) and Amazon EKS workloads, Helm charts, manifests, secrets, and ConfigMaps; used rolling and blue-green release strategies.</li>
+              <li>Led legacy application migrations from on-premises environments to AWS using Zerto, improving disaster recovery capabilities.</li>
+            </ul>
+            <ul class="tags" aria-label="Technologies">
+              <li>AWS</li><li>EKS</li><li>MKE</li><li>Kubernetes</li><li>Docker</li><li>Helm</li><li>CI/CD</li><li>Zerto</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-heading">
+              <h3>DevOps Lead</h3>
+              <span class="date">Jan 2020 – May 2024</span>
+            </div>
+            <p class="company">Paytm · Noida, India</p>
+            <ul>
+              <li>Designed and managed AWS infrastructure and environments, including VPCs, public and private subnets, route tables, NAT and internet gateways, VPC peering, and site-to-site VPNs.</li>
+              <li>Designed and operated EKS clusters, worker nodes, and application ingress with AWS Load Balancers; supported application deployments across development, staging, production, and disaster recovery environments.</li>
+              <li>Managed AWS services including EC2, S3, RDS, ECR, CloudFront, Route 53, IAM, and Secrets Manager; configured backups, retention policies, and scheduled EC2 start/stop automation with Lambda.</li>
+              <li>Established monitoring and alerts for AWS services and Kubernetes workloads, using CloudWatch, Container Insights, Prometheus, and Grafana.</li>
+              <li>Designed and managed Kafka and ELK Stack platforms and CI/CD pipelines; identified cloud cost-saving opportunities and improved resource utilization.</li>
+            </ul>
+            <ul class="tags" aria-label="Technologies">
+              <li>AWS</li><li>EKS</li><li>Terraform</li><li>Jenkins</li><li>Kafka</li><li>ELK</li><li>Prometheus</li><li>Grafana</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-heading">
+              <h3>System Engineer</h3>
+              <span class="date">Jun 2016 – Jan 2020</span>
+            </div>
+            <p class="company">Karix Mobile Pvt. Ltd. · New Delhi, India</p>
+            <ul>
+              <li>Supported prepaid and postpaid messaging services, investigating customer issues across SMS flows and resolving service incidents.</li>
+              <li>Created shell scripts and scheduled operational tasks with crontab; ran SQL queries and prepared database and table dumps as needed.</li>
+              <li>Worked with Linux systems, service logs, and messaging protocols including SMPP and HTTP/HTTPS.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-heading">
+              <h3>VAS Engineer</h3>
+              <span class="date">Jun 2015 – Jun 2016</span>
+            </div>
+            <p class="company">Comviva Technology · Gurgaon, India</p>
+            <ul>
+              <li>Resolved prepaid and postpaid SMS and calling issues by analyzing application logs and tracing service flows.</li>
+              <li>Supported IVR, inbound and outbound servers, and subscription services; used VPN, SSH, and VNC for remote operations.</li>
+              <li>Worked with Apache and Tomcat configuration, Linux server troubleshooting, database tablespaces, and partitions.</li>
+              <li>Used diagnostic tools and protocols including tcpdump, SS7 traces, SMPP, USSD, and the OSI model.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-heading">
+              <h3>Associate</h3>
+              <span class="date">Feb 2014 – Jun 2015</span>
+            </div>
+            <p class="company">One97 Communications Ltd. · Noida, India</p>
+            <ul>
+              <li>Provided L1 support for messaging, calling, inbound/outbound, IVR, and subscription services.</li>
+              <li>Analyzed SMS module logs and SS7 traces to investigate incidents and provide client support.</li>
+              <li>Supported Apache and Tomcat services and Linux server installation, configuration, and troubleshooting.</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+
+      <aside>
+        <section aria-labelledby="skills-title">
+          <h2 id="skills-title">Technical Skills</h2>
+          <div class="skill-group">
+            <h3>Cloud &amp; Containers</h3>
+            <p>AWS, Docker, Kubernetes, MKE, EKS</p>
+          </div>
+          <div class="skill-group">
+            <h3>CI/CD &amp; GitOps</h3>
+            <p>Jenkins, GitHub Actions, GitLab CI, Argo CD, Git</p>
+          </div>
+          <div class="skill-group">
+            <h3>Infrastructure &amp; Automation</h3>
+            <p>Ansible, Python, Shell scripting, operational automation</p>
+          </div>
+          <div class="skill-group">
+            <h3>Monitoring &amp; Data</h3>
+            <p>ELK Stack, Prometheus, Grafana, Kafka, Redis</p>
+          </div>
+          <div class="skill-group">
+            <h3>Platforms &amp; Security</h3>
+            <p>Linux, Windows, networking, security protocols, cloud optimization</p>
+          </div>
+          <div class="skill-group">
+            <h3>Registries</h3>
+            <p>Docker Hub, Amazon ECR, Google Container Registry, Mirantis Secure Registry</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="certifications-title">
+          <h2 id="certifications-title">Certifications</h2>
+          <ul class="side-list">
+            <li>
+              <strong>Certified Kubernetes Administrator</strong>
+              <span>Credential: LF-9gmvp60mcc</span>
+            </li>
+            <li>
+              <strong>Microsoft Azure Fundamentals</strong>
+              <span>Microsoft certification</span>
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
+          <ul class="side-list">
+            <li>
+              <strong>B.Tech., Electronics &amp; Communication Engineering</strong>
+              <span>Uttar Pradesh Technical University · 2013</span>
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="awards-title">
+          <h2 id="awards-title">Recognition</h2>
+          <ul class="side-list">
+            <li class="award">
+              <strong>Rising Star of the Quarter</strong>
+              <span>Paytm · 2022</span>
+            </li>
+            <li class="award">
+              <strong>Star of the Quarter</strong>
+              <span>Paytm · 2020</span>
+            </li>
+            <li class="award">
+              <strong>Rockstar of the Year</strong>
+              <span>Tanla Services · 2017</span>
+            </li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="footer">Mithun Gupta · DevOps Lead | Associate Consultant</footer>
+  </article>
+</body>
+</html>
